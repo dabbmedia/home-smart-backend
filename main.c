@@ -318,6 +318,7 @@ int main(int argc, char *argv[]) {
       gst_object_unref (data.pipeline);
       return -1;
   }
+  // for command line testing of the pipeline
 // sudo gst-launch-1.0 -v v4l2src device=/dev/video0 ! video/x-raw,width=640,height=480,framerate=30/1 ! videoconvert ! v4l2h264enc ! h264parse config-interval=-1 ! mpegtsmux ! hlssink target-duration=1 location="/tmp/hls/segment%05d.ts" playlist-location="/tmp/hls/playlist.m3u8"
 // sudo gst-launch-1.0 -v v4l2src device=/dev/video0 ! video/x-h264,width=640,height=480,framerate=30/1 ! h264parse config-interval=-1 ! mpegtsmux ! hlssink target-duration=1 location="/tmp/hls/segment%05d.ts" playlist-location="/tmp/hls/playlist.m3u8"
   /* Manually link the Tee, which has "Request" pads */
